@@ -24,9 +24,9 @@ FetchContent_MakeAvailable(googletest)
 ### Сборка
 Сборка с флагом BUILD_TESTS=ON.
 ```
-arina@debian:~/raniqu/workspace/projects/lab07$ cmake --build _builds --target test
+arina@debian:~/raniqu/workspace/projects/lab08$ cmake --build _builds --target test
 Running tests...
-Test project /home/arina/raniqu/workspace/projects/lab07/_builds
+Test project /home/arina/raniqu/workspace/projects/lab08/_builds
     Start 1: check
 1/1 Test #1: check ............................   Passed    0.01 sec
 
@@ -35,8 +35,8 @@ Test project /home/arina/raniqu/workspace/projects/lab07/_builds
 Total Test time (real) =   0.03 sec
 ```
 ```
-arina@debian:~/raniqu/workspace/projects/lab07$ ./_builds/check
-Running main() from /home/arina/raniqu/workspace/projects/lab07/_builds/_deps/googletest-src/googletest/src/gtest_main.cc
+arina@debian:~/raniqu/workspace/projects/lab08$ ./_builds/check
+Running main() from /home/arina/raniqu/workspace/projects/lab08/_builds/_deps/googletest-src/googletest/src/gtest_main.cc
 [==========] Running 1 test from 1 test suite.
 [----------] Global test environment set-up.
 [----------] 1 test from Print

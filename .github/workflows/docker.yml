@@ -1,0 +1,30 @@
+name: Docker Build
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Build Docker image
+      run: docker build -t logger .
+
+    - name: Run container
+      run: |
+        mkdir -p logs
+        echo -e "test1\ntest2\ntest3" | docker run -i -v "$(pwd)/logs/:/home/logs/" logger
+        cat logs/log.txt
+
+    - name: Verify log file
+      run: |
+        cat logs/log.txt
+        grep -q "test1" logs/log.txt
+        grep -q "test2" logs/log.txt
+        grep -q "test3" logs/log.txt
